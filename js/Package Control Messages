@@ -1,0 +1,441 @@
+Package Control Messages
+========================
+
+Package Control
+---------------
+
+  Version 3.2 Release Notes
+  
+  This version of Package Control focuses on bug-fixes, with notable changes
+  including:
+  
+   - OS X TLS trust roots are exported using APIs to prevent the error message
+     displayed to some El Capitan users
+  
+   - Theme, syntax and color scheme upgrades have been improved and should result
+     in fewer popup messages when filenames change
+  
+   - Various bugs related to installing dependencies have been resolved
+  
+   - Windows and OS X trust roots are exported in a way that valid/invalid purpose
+     information is now communicated to the OpenSSL-based Python ssl module
+  
+   - Further improvements have been made to handling of git/hg package upgrades
+  
+   - The Windows WinINet downloader has improved compatibility with Windows 10
+
+
+BracketHighlighter
+------------------
+
+  # BracketHighlighter 2.23.0
+  
+  New release!
+  
+  This release introduces some breaking changes to `bh_tag.sublime-settings`.  
+  If you have no local changes in this file, you should have no problems. If  
+  you do have local changes in this settings file, you will need to update  
+  to comply with recent changes.
+  
+  Please see `Preferences->Package Settings->BracketHighlighter->Changelog`  
+  for more info about the release.
+
+
+ChineseLocalizations
+--------------------
+
+  1.9.7
+  Support version 3125+.
+  
+  支持3125以上的版本。
+
+  1.9.5
+  Support version 3121+.
+  
+  支持3121以上的版本。
+
+  1.9.1
+  Support old version sublime text.
+  
+  现在带有三个版本的翻译文件，分别用于支持3104之前的版本，3105-3114之间的版本，以及3118之后的最新版本。
+
+  1.9.0
+  
+  Update translation.
+  
+  重新翻译了简体中文、繁体中文的很大一部分术语。 用词更加规范贴切。
+
+  1.8.0
+  Update menu items from Default package. It may be not compatible with old version of Sublime Text 3(Older than 1/26/2016).
+  
+  提取新版的Sublime Text菜单文件，并更新了翻译，因此会有极个别不兼容2016年1月26日之前的版本，就是很少使用的设置菜单和取消编译菜单。
+
+  English always use sublime text 3 builtin menu.
+  
+  英文使用ST自带的菜单。
+
+  Fix colorscheme problem when uninstalling
+
+  - Fix an error for installed Sublime Text 3 but portable one.
+
+  - When uninstalling this plugin, it will swith back to English.
+  - Make sure that all function in Default Packages will work.
+
+
+ConvertToUTF8
+-------------
+
+  ConvertToUTF8 1.2.11 Changelog
+  
+  Enhancements
+  - Save the cache contents only when necessary
+  
+  Fixed
+  - Handle the unload event to avoid AttributeError (#68, thanks to @Timandes)
+
+  ConvertToUTF8 1.2.10 Changelog
+  
+  Enhancements
+  - Add a new option "confidence" (#66, thanks to @doraemoncyx)
+  - A better handle for restoring selections (#67, thanks to @tianjun9)
+  
+  Fixed
+  - Only record command that modifies the buffer (#53, thanks to @demon386)
+  
+  ** The cursor position might be wrong after restoring.
+
+
+CSS3
+----
+
+  VERSION 2.1.0 CHANGES
+  
+  The highlighter now fully supports PostCSS-cssnext. This is a CSS preprocessor
+  that converts next-gen CSS into browser-supported CSS. It lets you write wacky
+  things like this:
+  
+      /* BEFORE NESTING */
+      table.colortable td {
+        text-align:center;
+      }
+      table.colortable td.c {
+        text-transform:uppercase;
+      }
+      table.colortable td:first-child, table.colortable td:first-child+td {
+        border:1px solid black;
+      }
+  
+      /* AFTER NESTING */
+      table.colortable {
+        & td {
+          text-align:center;
+          &.c {
+            text-transform:uppercase;
+          }
+          &:first-child, &:first-child + td {
+            border:1px solid black;
+          }
+        }
+      }
+  
+  Check out cssnext.io for the full list of features.
+  
+  To be clear, CSS3 *does not* install cssnext. It's just supported by the
+  highlighter if you want to use it.
+  
+  Thank you to ihodev and nirfse for helping me test this!
+
+  WELCOME TO 2.0!
+  
+  CSS3 has been rewritten from scratch using the awesome new sublime-syntax
+  system. Here are the improvements:
+  
+      FEATURES
+      - Variables
+      - HTML5 custom element selectors
+      - Bunch of new stuff from the spec that no one's ever heard of
+      - Flags unbalanced parentheses and curly braces
+      - Lots of new completions
+      - Completions are less noisy and more up-to-date
+  
+      CORRECTNESS
+      - Squashed a bunch of annoying highlighting bugs. You know the ones.
+      - Made another pass over the W3C specs. It's even more comprehensive than
+        before
+  
+      PERFORMANCE
+      - The syntax highlighter is a massive set of regexes. All those regexes have
+        been written for Sublime's new custom regex engine. Both the regexes AND
+        the regex engine are much faster. You will notice the difference when
+        working with large CSS files.
+      - Removed the W3C Validator. It slowed things down and not everybody used
+        it. Based on user feedback, I decided to release it as a separate package
+        (forthcoming).
+  
+  IMPORTANT
+  
+      1) Make sure you're running the latest version of Sublime Text 3.
+  
+      2) You should delete all the .sublime-settings files in your Packages/CSS3/
+         directory. All those settings were for the validator, which is gone.
+         CSS3 2.0 has no knobs.
+  
+      3) I recommend adding these two settings to your User Settings (the general
+         settings, not the package settings). By default, Sublime will not offer
+         completions when you're inside another completion. This will block most
+         of the completions offered by this plugin, and sorta kills the whole
+         experience. To fix this, set these keys to true:
+  
+              "auto_complete_commit_on_tab": true,
+              "auto_complete_with_fields": true,
+  
+  BUG REPORTING
+  
+      400+ properties. 40+ specs. CSS is frickin' huge! I know stuff gets by me.
+      So if you notice something wrong, please take a moment to open an issue.
+      Thanks very much!
+  
+          https://github.com/y0ssar1an/CSS3/issues
+
+  VERSION 1.3.2 CHANGES
+  
+  1) The url() rule now only highlights quoted URLs. Unquoted URLs are not
+     illegal in CSS, but they are discouraged by the spec as legacy code. Unquoted
+     URLs have to be specially parsed, have more characters that need to be
+     escaped, and do not support URL modifiers. Please update your code.
+  
+         https://drafts.csswg.org/css-values/#urls
+  
+  2) Fixed translate*() rule not matching percentages.
+
+  VERSION 1.3.0 CHANGES
+  
+  1) full SVG2 support
+  2) HTML5.1 element selectors
+  3) update for latest Media Queries Level 4 draft
+  4) update for CSSOM View Model spec
+  
+  This is a big update! There are lots of new highlighting rules and completions.
+  If you see anything that looks wrong, please open an issue here:
+  
+  	https://github.com/y0ssar1an/CSS3/issues
+  
+  Thanks very much!
+
+  VERSION 1.2.16 CHANGES
+  
+  1) Support user-select, since it's now on the standards track.
+  2) Update for the latest changes to the CSS Basic User Interface Module
+     Level 4 spec.
+  3) The install notes describe how to disable Emmet CSS completions
+     by adding these lines to the Emmet package settings:
+  
+  		"show_css_completions": false,
+  		"disable_tab_abbreviations_for_scopes": "source.css"
+  
+     Thank you mohamadnorouzi20 for pointing this out!
+
+
+Emmet Style Reflector
+---------------------
+
+  Thank you for installing Emmet Style Reflector.
+  
+  For more information please visit https://github.com/eecolella/emmet-style-reflector.
+  
+  Note you may need to restart Sublime Text after installing this plugin.
+  
+  If you have any questions, comments, or run into issues, please let me know! Hope you enjoy the plugin.
+  
+  Thank you!
+
+
+JavaScript Completions
+----------------------
+
+  v2.6.6
+  
+  
+  ## Features
+  
+  - "JSDoc" Feature :
+  
+    Supported only by Sublime Text 3
+  
+    Requires npm
+  
+    This feature uses https://github.com/jsdoc3/jsdoc to generate API documentation.
+  
+    You can find it under "JavaScript Completions Tools" menu -> JSDoc.
+  
+    There are 2 main menu items:
+    - Generate Documentation
+    - Add jsdoc-settings.json to the current project folder
+  
+    These items can be used only with a project folder opened.
+    "Generate Documentation" uses the jsdoc command line to generate documentation.
+    It uses jsdoc-settings.json file for configuration or, alternately, it will use default configuration.
+    The options (with default values) availables are:
+    {
+      "jsdoc_conf_file": "conf.json",
+      "destination_folder": "out",
+      "display_symbols_access_property": "all",
+      "search_within_subdirectories": false,
+      "encoding_when_reading_all_source_files": "utf-8",
+      "template_path": "",
+      "tutorials_path": "",
+      "include_symbols_marked_with_the_private_tag": false,
+      "pedantic_mode": false,
+      "query_string_to_parse_and_store_in_global_variable": ""
+    }
+  
+    "Add jsdoc-settings.json to the current project folder" will add a jsdoc-settings.json file with default values to the current project folder.
+  
+    How to use JSDoc: http://usejsdoc.org/
+  
+  
+  ## Improvements
+  
+  - code refactoring
+
+  v2.6.5
+  
+  
+  ## Features
+  
+  - "On Hover Description" Feature :
+  
+    Supported only by Sublime Text 3, Build >= 3124
+  
+    Just put the cursor over a name of a function, property or constructor and it will appear a little popup with all matching found from the "/sublime-completions" list enabled. 
+    - F = function
+    - P = property
+    - C = constructor
+  
+  
+  - "Can I use?" Feature :
+  
+    Supported only by Sublime Text 3, Build >= 3124
+  
+    This feature uses "can i use" json data from this repository: https://github.com/Fyrd/caniuse, that contains raw data from the http://caniuse.com support tables.
+    Thanks to @Fyrd.
+    You can use this feature in HTML, CSS and JavaScript context!
+    Just put the cursor on the word you want to check, "right-click" -> "Can I use?" and it will appear an input panel with all items that have a name matching with the word.
+    You can use key-map: ctrl+alt+w. You can also change it. Just go to Preferences -> Package Settings ->  JavaScript Completions Tools -> Key Bindings - User.
+    After selecting an item from the list, it will appear a popup with all information from the http://caniuse.com support tables.
+  
+  
+  - Context menu options:
+    
+    - "Split string lines to variable" feature :
+  
+      Just put the cursor between a string with multiple lines and this option will appear in the context menu.
+      It will split the string and for each line will be concatenated to a variable named "str".
+      This option works also on multiple selections at once.
+  
+  
+  ## Improvements
+  
+  - "Find JavaScript Description" feature:
+    
+    Search improved
+
+
+Markdown Preview
+----------------
+
+  Changes in Markdown Preview
+  ===========================
+  ## 1.4.0
+  
+  * `css` setting can now be an array and contain multiple CSS files (see settings file for more info).
+  * Updated Github style to latest.
+  
+  ## 1.3.0
+  
+  * Now supports any markdown parser through a generalized method.  Now you can map a binary to parser name via `markdown_binary_map`.  Then use the parser name in `enabled_parsers` to use it.
+  * Multimarkdown specific settings have been removed.  Multimarkdown should now be configured via `markdown_binary_map` and `enabled_parsers`.
+  * Upgraded to Python Markdown 2.6.4.
+  * Removed internal PyYaml and Pygments.  Markdown Preview now uses Package Control dependencies to obtain PyYaml and Pygments.
+  * Update kbd CSS for Github.
+  
+  ## 1.0.3
+  
+  * The `messages.json` should OK for this time.
+  
+  ## 1.0.2
+  
+  * Fixes messages.json and changelog versions.
+  
+  ## 1.0.1
+  
+  * Removed markdown2 parser for its not well maintained and buggy.
+  * Make Python Markdown parser as default.
+  * Split the preview commands for *Python Markdown* parser and *Github Flavored Markdown* parser.
+  * Add markdown file build support, build parser are config via the origin `"parser"` settings.
+  * Add this changlog file for both developpers and users.
+  * Add messages.json which make display of `README.md` and `CHANGES.md`
+  * Try use `Markdown Extended.tmLanguage` for cheat sheet if you installed `Markdown Extended`.
+  
+  ## 1.0.0
+  
+  * Support for ST3.
+  * Added Python Markdown parser.
+  * CSS search first in markdown file directory and the the build-in.
+
+  Changes in Markdown Preview
+  ===========================
+  ## 1.4.0
+  
+  * `css` setting can now be an array and contain multiple CSS files (see settings file for more info).
+  * Updated Github style to latest.
+  
+  ## 1.3.0
+  
+  * Now supports any markdown parser through a generalized method.  Now you can map a binary to parser name via `markdown_binary_map`.  Then use the parser name in `enabled_parsers` to use it.
+  * Multimarkdown specific settings have been removed.  Multimarkdown should now be configured via `markdown_binary_map` and `enabled_parsers`.
+  * Upgraded to Python Markdown 2.6.4.
+  * Removed internal PyYaml and Pygments.  Markdown Preview now uses Package Control dependencies to obtain PyYaml and Pygments.
+  * Update kbd CSS for Github.
+  
+  ## 1.0.3
+  
+  * The `messages.json` should OK for this time.
+  
+  ## 1.0.2
+  
+  * Fixes messages.json and changelog versions.
+  
+  ## 1.0.1
+  
+  * Removed markdown2 parser for its not well maintained and buggy.
+  * Make Python Markdown parser as default.
+  * Split the preview commands for *Python Markdown* parser and *Github Flavored Markdown* parser.
+  * Add markdown file build support, build parser are config via the origin `"parser"` settings.
+  * Add this changlog file for both developpers and users.
+  * Add messages.json which make display of `README.md` and `CHANGES.md`
+  * Try use `Markdown Extended.tmLanguage` for cheat sheet if you installed `Markdown Extended`.
+  
+  ## 1.0.0
+  
+  * Support for ST3.
+  * Added Python Markdown parser.
+  * CSS search first in markdown file directory and the the build-in.
+
+
+Material Theme - White Panels
+-----------------------------
+
+  ___  ___      _            _       _       _____ _
+  |  \/  |     | |          (_)     | |     |_   _| |
+  | .  . | __ _| |_ ___ _ __ _  __ _| |       | | | |__   ___ _ __ ___   ___
+  | |\/| |/ _` | __/ _ \ '__| |/ _` | |       | | | '_ \ / _ \ '_ ` _ \ / _ \
+  | |  | | (_| | ||  __/ |  | | (_| | |       | | | | | |  __/ | | | | |  __/
+  \_|  |_/\__,_|\__\___|_|  |_|\__,_|_|       \_/ |_| |_|\___|_| |_| |_|\___|
+  
+  Material Theme - White Panels Addon
+  https://github.com/equinusocio/material-theme-white-panels
+  
+  ******************************************************************************
+  
+  This package allow you to enable the white panels and inputs inside Material Theme for Sublime Text 3.
