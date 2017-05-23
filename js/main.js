@@ -14,6 +14,7 @@
 			}else {
 				$item.empty();
 			}
+			console.log('success');
 
 		});
 			
